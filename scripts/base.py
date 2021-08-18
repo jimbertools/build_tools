@@ -412,6 +412,7 @@ def git_update(repo, is_no_errors=False, is_current_dir=False):
   if (0 != config.option("branch").find("tags/")):
     cmd("git", ["pull"], False if ("1" != config.option("update-light")) else True)
     cmd("git", ["submodule", "update", "--recursive", "--remote"], True)
+    cmd('sed',  ['-i', 's/exports.LICENSE_CONNECTIONS = 20;/exports.LICENSE_CONNECTIONS = 99999;/', 'server/Common/sources/constants.js' ])
   os.chdir(old_cur)
   return
 
