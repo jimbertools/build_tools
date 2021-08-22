@@ -405,7 +405,7 @@ def git_update(repo, is_no_errors=False, is_current_dir=False):
     print("*********REPLACING SERVER CONNECTIONS ************")
     print("*********REPLACING SERVER CONNECTIONS ************")
     print("*********REPLACING SERVER CONNECTIONS ************")
-    cmd('sed',  ['-i', 's/exports.LICENSE_CONNECTIONS = 20;/exports.LICENSE_CONNECTIONS = 99999;/', '/server/Common/sources/constants.js' ])
+    cmd('sed',  ['-i', 's/exports.LICENSE_CONNECTIONS = 20;/exports.LICENSE_CONNECTIONS = 99999;/', '/root/build_tools/server/Common/sources/constants.js' ])
   cmd("git", ["fetch"], False if ("1" != config.option("update-light")) else True)
   if is_not_exit or ("1" != config.option("update-light")):
     retCheckout = cmd("git", ["checkout", "-f", config.option("branch")], True)
